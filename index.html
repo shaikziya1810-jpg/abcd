@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>FrameFinder</title>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FrameFinder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <h1>FrameFinder</h1>
         <p>Find images that inspire you.</p>
     </header>
-    
+
     <main>
         <form id="search-form">
-            <label for="search-input" class="sr-only">Search image</label>
-            <input type="search" id="search-input" placeholder="search image...">
-            <button type="submit" id="search-button">Search</button>  
+            <label for="search-input" class="sr-only">
+                Search images
+            </label>
+
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search images..."
+                autocomplete="off"
+                required
+            >
+
+            <button type="submit" id="search-button">
+                Search
+            </button>
         </form>
 
-        <div class="categories">
-            <button type="submit">Nature</button>
-            <button type="submit">Animals</button>
-            <button type="submit">Travel</button>
+        <div class="categories" aria-label="Image categories">
+            <button type="button">Nature</button>
+            <button type="button">Animals</button>
+            <button type="button">Travel</button>
         </div>
-     <p id="status">0 images found</p>
-     <section id="result" aria.label="Image search result">
-        <p class="empty-message">Search for something to get started.</p>
-     </section> 
-     </main>  
-         
+
+        <p id="status" role="status" aria-live="polite">
+            Search for something to get started.
+        </p>
+
+        <section
+            id="results"
+            aria-label="Image search results"
+        >
+            <p class="empty-message">
+                Search for something to get started.
+            </p>
+        </section>
+    </main>
 </body>
 </html>
